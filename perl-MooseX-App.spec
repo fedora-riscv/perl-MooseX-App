@@ -1,6 +1,6 @@
 Name:           perl-MooseX-App
-Version:        1.30
-Release:        2%{?dist}
+Version:        1.31
+Release:        1%{?dist}
 Summary:        Write user-friendly command line apps with even less suffering
 License:        GPL+ or Artistic
 URL:            http://search.cpan.org/dist/MooseX-App/
@@ -87,6 +87,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Tue Feb 10 2015 Petr Šabata <contyk@redhat.com> - 1.31-1
+- 1.31 bump
+
 * Tue Dec 02 2014 Petr Šabata <contyk@redhat.com> - 1.30-2
 - Fix build issues pointed out in the review
 
