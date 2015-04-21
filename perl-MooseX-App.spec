@@ -1,5 +1,5 @@
 Name:           perl-MooseX-App
-Version:        1.32
+Version:        1.33
 Release:        1%{?dist}
 Summary:        Write user-friendly command line apps with even less suffering
 License:        GPL+ or Artistic
@@ -49,7 +49,9 @@ BuildRequires:  perl(utf8)
 # Tests only
 BuildRequires:  perl(Data::Dumper)
 BuildRequires:  perl(FindBin)
+BuildRequires:  perl(IPC::Open3)
 BuildRequires:  perl(lib)
+BuildRequires:  perl(Symbol)
 BuildRequires:  perl(Test::Most)
 BuildRequires:  perl(Test::NoWarnings)
 Requires:       perl(:MODULE_COMPAT_%(eval "$(perl -V:version)"; echo $version))
@@ -87,6 +89,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Tue Apr 21 2015 Petr Šabata <contyk@redhat.com> - 1.33-1
+- 1.33 bump
+
 * Sun Mar 22 2015 Emmanuel Seyman <emmanuel@seyman.fr> - 1.32-1
 - Update to 1.32
 
