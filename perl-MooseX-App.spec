@@ -1,12 +1,13 @@
 Name:           perl-MooseX-App
-Version:        1.33
-Release:        4%{?dist}
+Version:        1.34
+Release:        1%{?dist}
 Summary:        Write user-friendly command line apps with even less suffering
 License:        GPL+ or Artistic
 URL:            http://search.cpan.org/dist/MooseX-App/
 Source0:        http://www.cpan.org/authors/id/M/MA/MAROS/MooseX-App-%{version}.tar.gz
 BuildArch:      noarch
 # Build
+BuildRequires:  make
 BuildRequires:  perl
 BuildRequires:  perl(base)
 BuildRequires:  perl(Config)
@@ -89,6 +90,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Mon Feb 22 2016 Petr Šabata <contyk@redhat.com> - 1.34-1
+- 1.34 bump
+
 * Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.33-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
