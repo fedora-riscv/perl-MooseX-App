@@ -9,6 +9,7 @@ BuildArch:      noarch
 # Build
 BuildRequires:  make
 BuildRequires:  perl
+BuildRequires:  perl-generators
 BuildRequires:  perl(base)
 BuildRequires:  perl(Config)
 BuildRequires:  perl(Cwd)
