@@ -1,6 +1,6 @@
 Name:           perl-MooseX-App
 Version:        1.37
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Write user-friendly command line apps with even less suffering
 License:        GPL+ or Artistic
 URL:            http://search.cpan.org/dist/MooseX-App/
@@ -91,6 +91,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.37-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Sun Nov 20 2016 Emmanuel Seyman <emmanuel@seyman.fr> - 1.37-1
 - Update to 1.37
 
