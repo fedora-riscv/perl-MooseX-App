@@ -1,4 +1,4 @@
-%global cpan_version 1.3701
+%global cpan_version 1.38
 
 Name:           perl-MooseX-App
 # Keep 2-digit precision
@@ -95,6 +95,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Tue May 23 2017 Jitka Plesnikova <jplesnik@redhat.com> - 1.38-1
+- Update 1.38
+
 * Mon Mar 06 2017 Jitka Plesnikova <jplesnik@redhat.com> - 1.37.01-1
 - Update to 1.3701
 
