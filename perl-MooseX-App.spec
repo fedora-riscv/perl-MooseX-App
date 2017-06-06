@@ -3,7 +3,7 @@
 Name:           perl-MooseX-App
 # Keep 2-digit precision
 Version:        %(echo '%{cpan_version}' | sed 's/\(\...\)\(.\)/\1.\2/')
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Write user-friendly command line apps with even less suffering
 License:        GPL+ or Artistic
 URL:            http://search.cpan.org/dist/MooseX-App/
@@ -95,6 +95,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Tue Jun 06 2017 Jitka Plesnikova <jplesnik@redhat.com> - 1.38-2
+- Perl 5.26 rebuild
+
 * Tue May 23 2017 Jitka Plesnikova <jplesnik@redhat.com> - 1.38-1
 - Update 1.38
 
