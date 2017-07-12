@@ -11,7 +11,7 @@ Source0:        http://www.cpan.org/authors/id/M/MA/MAROS/MooseX-App-%{cpan_vers
 BuildArch:      noarch
 # Build
 BuildRequires:  make
-BuildRequires:  perl
+BuildRequires:  perl-interpreter
 BuildRequires:  perl-generators
 BuildRequires:  perl(base)
 BuildRequires:  perl(Config)
