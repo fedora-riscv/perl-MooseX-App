@@ -6,8 +6,8 @@ Version:        %(echo '%{cpan_version}' | sed 's/\(\...\)\(.\)/\1.\2/')
 Release:        2%{?dist}
 Summary:        Write user-friendly command line apps with even less suffering
 License:        GPL+ or Artistic
-URL:            http://search.cpan.org/dist/MooseX-App/
-Source0:        http://www.cpan.org/authors/id/M/MA/MAROS/MooseX-App-%{cpan_version}.tar.gz
+URL:            https://metacpan.org/release/MooseX-App
+Source0:        https://cpan.metacpan.org/authors/id/M/MA/MAROS/MooseX-App-%{cpan_version}.tar.gz
 BuildArch:      noarch
 # Build
 BuildRequires:  make
