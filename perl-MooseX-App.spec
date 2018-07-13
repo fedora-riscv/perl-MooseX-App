@@ -3,7 +3,7 @@
 Name:           perl-MooseX-App
 # Keep 2-digit precision
 Version:        %(echo '%{cpan_version}' | sed 's/\(\...\)\(.\)/\1.\2/')
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Write user-friendly command line apps with even less suffering
 License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/MooseX-App
@@ -95,6 +95,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Fri Jul 13 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.39-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Sat Jun 30 2018 Jitka Plesnikova <jplesnik@redhat.com> - 1.39-3
 - Perl 5.28 rebuild
 
