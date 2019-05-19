@@ -1,0 +1,4 @@
+from Config import *
+addFilter("spelling-error .* customisable");
+addFilter("spelling-error .* qw");
+addFilter("spelling-error .* accessors");
