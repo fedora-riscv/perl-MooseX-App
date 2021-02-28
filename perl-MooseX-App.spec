@@ -3,13 +3,16 @@
 Name:           perl-MooseX-App
 # Keep 2-digit precision
 Version:        %(echo '%{cpan_version}' | sed 's/\(\...\)\(.\)/\1.\2/')
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        Write user-friendly command line apps with even less suffering
 License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/MooseX-App
 Source0:        https://cpan.metacpan.org/authors/id/M/MA/MAROS/MooseX-App-%{cpan_version}.tar.gz
+# https://github.com/maros/MooseX-App/pull/66
+Patch0:         MooseX-App-1.41-testing-fix.patch
 BuildArch:      noarch
 # Build
+BuildRequires:  coreutils
 BuildRequires:  make
 BuildRequires:  perl-interpreter
 BuildRequires:  perl-generators
@@ -60,7 +63,7 @@ BuildRequires:  perl(Symbol)
 BuildRequires:  perl(Test::More)
 BuildRequires:  perl(Test::Most)
 BuildRequires:  perl(Test::NoWarnings)
-Requires:       perl(:MODULE_COMPAT_%(eval "$(perl -V:version)"; echo $version))
+Requires:       perl(:MODULE_COMPAT_%(eval "$(/usr/bin/perl -V:version)"; echo $version))
 Requires:       perl(I18N::Langinfo)
 Requires:       perl(Moose) >= 2.00
 
@@ -76,20 +79,19 @@ be defined as simple Moose accessors.
 
 %prep
 %setup -q -n MooseX-App-%{cpan_version}
-# Temporary remove failing test (bug #1914227)
 # https://github.com/maros/MooseX-App/issues/62
-rm t/05_extended.t
+%patch0 -p1
 
 %build
-perl Makefile.PL INSTALLDIRS=vendor NO_PACKLIST=1
-make %{?_smp_mflags}
+perl Makefile.PL INSTALLDIRS=vendor NO_PACKLIST=1 NO_PERLLOCAL=1
+%{make_build}
 
 %install
-make pure_install DESTDIR=%{buildroot}
+%{make_install}
 %{_fixperms} %{buildroot}/*
 
 %check
-make test
+%{make_build} test
 
 %files
 %license LICENCE
@@ -98,6 +100,12 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Sun Feb 28 2021 Emmanuel Seyman <emmanuel@seyman.fr> - 1.41-9
+- Patch and re-enable failing test (#1914227)
+- Use %%{make_install} instead of "make pure_install"
+- Use %%{make_build} instead of make
+- Pass NO_PERLLOCAL to Makefile.PL
+
 * Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.41-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
