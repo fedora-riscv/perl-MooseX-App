@@ -3,7 +3,7 @@
 Name:           perl-MooseX-App
 # Keep 2-digit precision
 Version:        %(echo '%{cpan_version}' | sed 's/\(\...\)\(.\)/\1.\2/')
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        Write user-friendly command line apps with even less suffering
 License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/MooseX-App
@@ -100,6 +100,9 @@ perl Makefile.PL INSTALLDIRS=vendor NO_PACKLIST=1 NO_PERLLOCAL=1
 %{_mandir}/man3/*
 
 %changelog
+* Sat May 22 2021 Jitka Plesnikova <jplesnik@redhat.com> - 1.41-10
+- Perl 5.34 rebuild
+
 * Sun Feb 28 2021 Emmanuel Seyman <emmanuel@seyman.fr> - 1.41-9
 - Patch and re-enable failing test (#1914227)
 - Use %%{make_install} instead of "make pure_install"
