@@ -3,7 +3,7 @@
 Name:           perl-MooseX-App
 # Keep 2-digit precision
 Version:        %(echo '%{cpan_version}' | sed 's/\(\...\)\(.\)/\1.\2/')
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Write user-friendly command line apps with even less suffering
 License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/MooseX-App
@@ -96,6 +96,9 @@ perl Makefile.PL INSTALLDIRS=vendor NO_PACKLIST=1 NO_PERLLOCAL=1
 %{_mandir}/man3/*
 
 %changelog
+* Fri Jan 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.42-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
 * Sun Aug 29 2021 Emmanuel Seyman <emmanuel@seyman.fr> - 1.42-1
 - Update to 1.42
 - Remove upsteamed patch
